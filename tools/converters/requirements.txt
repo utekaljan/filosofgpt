@@ -1,0 +1,3 @@
+# Official modular Docling v2.123.1 distribution with only the components used
+# by this project, pinned to the exact commit behind the GitHub release tag.
+docling-slim[convert-core,format-pdf,models-local] @ git+https://github.com/docling-project/docling.git@d745e9708c1aa207cf4622fb21fdde68267f64ab

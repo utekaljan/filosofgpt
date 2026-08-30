@@ -1,0 +1,24 @@
+{
+  "name": "filosofgpt-polyhistorgpt-corpus-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Jan Utěkal",
+  "description": "Public corpus pipeline behind the FilosofGPT and PolyhistorGPT custom GPT knowledge sources",
+  "scripts": {
+    "demo": "node src/cli/ingest.js --input=examples/synthetic --output=output/demo --classifier=metadata --catalog=examples/synthetic-catalog.json",
+    "ingest": "node src/cli/run-all.js",
+    "ingest:preflight": "node src/cli/preflight.js",
+    "master": "node src/cli/run-all.js",
+    "setup:converters": "node src/cli/setup-converters.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.13.0 || >=24"
+  },
+  "dependencies": {
+    "epub2md": "1.6.3",
+    "pdfjs-dist": "6.2.108",
+    "tiktoken": "1.0.22"
+  }
+}

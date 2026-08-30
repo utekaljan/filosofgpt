@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "author": { "type": "string" },
+          "title": { "type": "string" },
+          "language": { "type": "string" },
+          "content_type": {
+            "type": "string",
+            "enum": ["book", "book_chapter", "article", "essay", "lecture", "report", "reference", "fiction", "unknown"]
+          },
+          "summary_cz": { "type": "string" },
+          "target": {
+            "type": "string",
+            "enum": ["FilosofGPT", "PolyhistorGPT", "null"]
+          },
+          "relevance_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "priority_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "reason_cz": { "type": "string" },
+          "canonical_key": { "type": "string" },
+          "edition_note": { "type": "string" },
+          "evidence": {
+            "type": "string",
+            "enum": ["known_work", "provided_metadata", "path_or_filename", "web_research", "uncertain"]
+          }
+        },
+        "required": [
+          "id",
+          "author",
+          "title",
+          "language",
+          "content_type",
+          "summary_cz",
+          "target",
+          "relevance_score",
+          "priority_score",
+          "confidence",
+          "reason_cz",
+          "canonical_key",
+          "edition_note",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["results"],
+  "additionalProperties": false
+}

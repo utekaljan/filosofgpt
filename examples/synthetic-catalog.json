@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "description": "Routing metadata for the first-party synthetic EPUB fixture.",
+  "works": [
+    {
+      "source": "synthetic-epub-fixture.epub",
+      "author": "Fixture Author",
+      "title": "Synthetic EPUB Fixture",
+      "summaryCz": "Zcela syntetický dokument vytvořený pouze pro ověření EPUB konverze.",
+      "target": "FilosofGPT",
+      "confidence": 1,
+      "reasonCz": "Vlastní syntetický testovací dokument umožňuje veřejně ověřit EPUB konverzi bez použití skutečného díla."
+    }
+  ]
+}

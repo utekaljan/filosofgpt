@@ -1,0 +1,39 @@
+{
+  "sourceDir": "input",
+  "outputDir": "output",
+  "stateDir": "output/state",
+  "booksDir": "output/books",
+  "markdownDir": "output/markdown",
+  "mergedDir": "output/merged",
+  "reportsDir": "output/reports",
+  "supportedExtensions": [".md", ".epub", ".pdf"],
+  "sourcePriority": [".md", ".epub", ".pdf"],
+  "corpora": ["FilosofGPT", "PolyhistorGPT"],
+  "classification": {
+    "batchSize": 10,
+    "concurrency": 1,
+    "maxAttempts": 2,
+    "timeoutMinutes": 20
+  },
+  "curation": {
+    "batchSize": 10,
+    "concurrency": 1,
+    "maxAttempts": 2,
+    "timeoutMinutes": 20,
+    "authorRosterSummaryCharacters": 220,
+    "atlasSummaryCharacters": 180
+  },
+  "conversion": {
+    "maxCandidatesPerCorpus": 360
+  },
+  "upload": {
+    "maxKnowledgeFiles": 18,
+    "reservedExternalKnowledgeFiles": 0,
+    "maxBookFiles": 18,
+    "indexMode": "embedded-first",
+    "maxFileSizeBytes": 12582912,
+    "preferredFileSizeBytes": 11534336,
+    "maxTokensPerFile": 1800000,
+    "tokenEncodings": ["o200k_base", "cl100k_base"]
+  }
+}

@@ -1,0 +1,35 @@
+# Operating-system and editor state
+.DS_Store
+._*
+.idea/
+.vscode/
+
+# Dependencies
+node_modules/
+
+# Generated and resumable pipeline state
+output/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+private/
+prompts/
+*.prompt.*
+
+# Safety rail: do not accidentally commit a real source library
+books_original/
+inputs/
+*.epub
+*.pdf
+!examples/synthetic/synthetic-epub-fixture.epub
+
+# Stable local drop folder: keep the directory, ignore everything put in it
+input/*
+!input/.gitkeep
+
+# Temporary and diagnostic files
+.synthetic-epub-build/
+*.tmp-*
+*.log

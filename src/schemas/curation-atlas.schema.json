@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "corpus": { "type": "string", "enum": ["FilosofGPT", "PolyhistorGPT"] },
+    "mission_summary_cz": { "type": "string" },
+    "focus_areas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": { "type": "string" },
+          "title_cz": { "type": "string" },
+          "description_cz": { "type": "string" },
+          "weight": { "type": "integer", "minimum": 1, "maximum": 5 },
+          "minimum_distinct_authors": { "type": "integer", "minimum": 1, "maximum": 30 }
+        },
+        "required": ["key", "title_cz", "description_cz", "weight", "minimum_distinct_authors"],
+        "additionalProperties": false
+      }
+    },
+    "must_include_works": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "work_id": { "type": "string" },
+          "reason_cz": { "type": "string" }
+        },
+        "required": ["work_id", "reason_cz"],
+        "additionalProperties": false
+      }
+    },
+    "author_policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author_key": { "type": "string" },
+          "author": { "type": "string" },
+          "preferred_work_ids": { "type": "array", "items": { "type": "string" } },
+          "soft_maximum": { "type": "integer", "minimum": 1, "maximum": 20 },
+          "reason_cz": { "type": "string" }
+        },
+        "required": ["author_key", "author", "preferred_work_ids", "soft_maximum", "reason_cz"],
+        "additionalProperties": false
+      }
+    },
+    "exact_duplicate_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "representative_work_id": { "type": "string" },
+          "work_ids": { "type": "array", "items": { "type": "string" } },
+          "reason_cz": { "type": "string" }
+        },
+        "required": ["representative_work_id", "work_ids", "reason_cz"],
+        "additionalProperties": false
+      }
+    },
+    "containment_relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "container_work_id": { "type": "string" },
+          "contained_work_id": { "type": "string" },
+          "reason_cz": { "type": "string" }
+        },
+        "required": ["container_work_id", "contained_work_id", "reason_cz"],
+        "additionalProperties": false
+      }
+    },
+    "selection_rules_cz": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["corpus", "mission_summary_cz", "focus_areas", "must_include_works", "author_policies", "exact_duplicate_groups", "containment_relations", "selection_rules_cz"],
+  "additionalProperties": false
+}
