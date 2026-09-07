@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "epub2md": "1.6.3",
-    "pdfjs-dist": "6.2.108",
+    "pdfjs-dist": "6.3.289",
     "tiktoken": "1.0.22"
   }
 }
