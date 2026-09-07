@@ -17,7 +17,7 @@
     "node": ">=22.13.0 || >=24"
   },
   "dependencies": {
-    "epub2md": "1.6.3",
+    "epub2md": "1.6.4",
     "pdfjs-dist": "6.2.108",
     "tiktoken": "1.0.22"
   }
